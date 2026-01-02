@@ -1,14 +1,31 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "subpy"
+name = "submarinepy"  # <-- CHANGE THIS to a unique PyPI name
 version = "0.1.0"
 description = "SubPy - Submarine Data Analysis Toolkit"
-authors = [{ name = "Ishaan D" }]
 readme = "README.md"
 requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Ishaan D" }]
+keywords = ["submarine", "data", "analysis"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+# Put runtime deps here later, when you actually use them:
+# dependencies = ["pandas>=2.0", "numpy>=1.26"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/<YOUR_GITHUB_USERNAME>/<YOUR_REPO_NAME>"
+Issues = "https://github.com/<YOUR_GITHUB_USERNAME>/<YOUR_REPO_NAME>/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
